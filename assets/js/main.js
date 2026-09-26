@@ -103,6 +103,18 @@
     };
     nameInput.addEventListener('input', () => { if (nameInput.value.trim()) setNameError(false); });
 
+    // Procedimentos: dá para marcar mais de um, mas pelo menos um
+    const serviceField = $('.field--choices', form);
+    const serviceError = $('#f-servico-erro', form);
+    const setServiceError = (show) => {
+      serviceField.classList.toggle('is-invalid', show);
+      serviceError.hidden = !show;
+    };
+    serviceField.addEventListener('change', () => {
+      if ($('input[name="servico"]:checked', form)) setServiceError(false);
+    });
+    const listJoin = (items) => (items.length > 1 ? `${items.slice(0, -1).join(', ')} e ${items[items.length - 1]}` : items[0]);
+
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       const data = new FormData(form);
@@ -114,12 +126,19 @@
         return;
       }
       setNameError(false);
+      const services = data.getAll('servico').map(String);
+      if (!services.length) {
+        setServiceError(true);
+        $('input[name="servico"]', form).focus();
+        return;
+      }
+      setServiceError(false);
 
       const lines = [
         'Oi, Marjorie! Vim pelo site e quero agendar um horário.',
         '',
         `*Nome:* ${name}`,
-        `*Quero fazer:* ${value('servico')}`,
+        `*Quero fazer:* ${listJoin(services)}`,
       ];
       if (value('detalhe')) lines.push(`*Local ou detalhe:* ${value('detalhe')}`);
       lines.push(`*Melhor dia:* ${value('dia')}`, `*Turno:* ${value('turno')}`);

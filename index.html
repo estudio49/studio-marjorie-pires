@@ -59,8 +59,8 @@
     "areaServed": { "@type": "City", "name": "Lages" },
     "hasMap": "https://www.google.com/maps/place/Studio+Marjorie+Pires/data=!4m2!3m1!1s0x0:0x9cd0ffe983b70169",
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "12:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "14:00", "closes": "20:00" }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "12:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "14:00", "closes": "20:00" }
     ],
     "sameAs": [
       "https://www.instagram.com/studiomarjoriepires/",
@@ -85,7 +85,7 @@
     "mainEntity": [
       { "@type": "Question", "name": "Quanto custa?", "acceptedAnswer": { "@type": "Answer", "text": "O valor depende do procedimento e, no caso do piercing, do local e da joia escolhida. Me chama no WhatsApp que eu passo um orçamento certinho." } },
       { "@type": "Question", "name": "Preciso agendar?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, atendo somente com horário marcado. É só me chamar no WhatsApp (49) 99809-2836 para combinarmos o melhor dia." } },
-      { "@type": "Question", "name": "Qual o horário de atendimento?", "acceptedAnswer": { "@type": "Answer", "text": "Segunda a sábado, das 9h às 12h e das 14h às 20h." } },
+      { "@type": "Question", "name": "Qual o horário de atendimento?", "acceptedAnswer": { "@type": "Answer", "text": "Segunda a sexta, das 9h às 12h e das 14h às 20h." } },
       { "@type": "Question", "name": "Onde fica o estúdio?", "acceptedAnswer": { "@type": "Answer", "text": "Rua General Nepomuceno Costa, 435, no Centro de Lages/SC." } },
       { "@type": "Question", "name": "Quais formas de pagamento são aceitas?", "acceptedAnswer": { "@type": "Answer", "text": "PIX, dinheiro, cartão de crédito e débito." } },
       { "@type": "Question", "name": "De que material são as joias?", "acceptedAnswer": { "@type": "Answer", "text": "Trabalho só com titânio ASTM F136, um material hipoalergênico e bem tolerado pela pele." } },
@@ -156,7 +156,7 @@
         <span>Agendar no WhatsApp</span>
         <svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
       </a>
-      <p class="menu__meta">Seg a sáb · <span class="num">9h–12h</span> e <span class="num">14h–20h</span><br>R. Gen. Nepomuceno Costa, 435 · Centro · Lages/SC</p>
+      <p class="menu__meta">Seg a sex · <span class="num">9h–12h</span> e <span class="num">14h–20h</span><br>R. Gen. Nepomuceno Costa, 435 · Centro · Lages/SC</p>
     </div>
   </header>
 
@@ -173,7 +173,7 @@
               <span>Marcar pelo WhatsApp</span>
               <svg class="i i--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
             </a>
-            <p class="hero__note">Atendimento com horário marcado, de segunda a sábado.</p>
+            <p class="hero__note">Atendimento com horário marcado, de segunda a sexta.</p>
           </div>
         </div>
         <div class="hero__media">
@@ -436,7 +436,7 @@
             </details>
             <details class="qa" name="faq">
               <summary class="qa__q">Qual o horário de atendimento?<svg class="i qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
-              <div class="qa__a"><p>Segunda a sábado, das <span class="num">9h</span> às <span class="num">12h</span> e das <span class="num">14h</span> às <span class="num">20h</span>.</p></div>
+              <div class="qa__a"><p>Segunda a sexta, das <span class="num">9h</span> às <span class="num">12h</span> e das <span class="num">14h</span> às <span class="num">20h</span>.</p></div>
             </details>
             <details class="qa" name="faq">
               <summary class="qa__q">Onde fica o estúdio?<svg class="i qa__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
@@ -514,16 +514,17 @@
               <p class="field__error" id="f-nome-erro" hidden>Me conta seu nome para eu saber com quem estou falando.</p>
             </div>
 
-            <fieldset class="field field--choices">
-              <legend class="field__label">O que você quer fazer?</legend>
+            <fieldset class="field field--choices" aria-describedby="f-servico-erro">
+              <legend class="field__label">O que você quer fazer? <span class="field__opt">(pode marcar mais de um)</span></legend>
               <div class="choices">
-                <label class="choice"><input type="radio" name="servico" value="Piercing" checked><span>Piercing</span></label>
-                <label class="choice"><input type="radio" name="servico" value="Sobrancelhas"><span>Sobrancelhas</span></label>
-                <label class="choice"><input type="radio" name="servico" value="Estética facial"><span>Facial</span></label>
-                <label class="choice"><input type="radio" name="servico" value="Lobuloplastia"><span>Lobuloplastia</span></label>
-                <label class="choice"><input type="radio" name="servico" value="Curso"><span>Curso</span></label>
-                <label class="choice"><input type="radio" name="servico" value="Outro assunto"><span>Outro</span></label>
+                <label class="choice"><input type="checkbox" name="servico" value="Piercing" checked><span>Piercing</span></label>
+                <label class="choice"><input type="checkbox" name="servico" value="Sobrancelhas"><span>Sobrancelhas</span></label>
+                <label class="choice"><input type="checkbox" name="servico" value="Estética facial"><span>Facial</span></label>
+                <label class="choice"><input type="checkbox" name="servico" value="Lobuloplastia"><span>Lobuloplastia</span></label>
+                <label class="choice"><input type="checkbox" name="servico" value="Curso"><span>Curso</span></label>
+                <label class="choice"><input type="checkbox" name="servico" value="Outro assunto"><span>Outro</span></label>
               </div>
+              <p class="field__error" id="f-servico-erro" hidden>Marque pelo menos uma opção.</p>
             </fieldset>
 
             <div class="field">
@@ -541,7 +542,6 @@
                   <option>Quarta</option>
                   <option>Quinta</option>
                   <option>Sexta</option>
-                  <option>Sábado</option>
                 </select>
               </div>
               <div class="field">
@@ -583,7 +583,7 @@
               </div>
               <div class="visit__row">
                 <dt><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Horário</dt>
-                <dd>Segunda a sábado<br><span class="num">9h–12h</span> e <span class="num">14h–20h</span></dd>
+                <dd>Segunda a sexta<br><span class="num">9h–12h</span> e <span class="num">14h–20h</span></dd>
               </div>
               <div class="visit__row">
                 <dt><svg class="i" aria-hidden="true"><use href="#i-card"/></svg>Pagamento</dt>
